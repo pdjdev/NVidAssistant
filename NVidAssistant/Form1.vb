@@ -136,7 +136,7 @@ Public Class Form1
 
             If videoList.Count > 0 Then
                 VideoSelectCB.SelectedIndex = 0
-                analyzeLink(postVidUrl(0))
+                analyzeLink(postVidUrl(0), False)
             End If
 
         End If
@@ -331,6 +331,17 @@ Public Class Form1
 
                 End Try
 
+            ElseIf nowClipTxt.Contains("tv.naver.com/v/") Then '공유 링크일 경우
+
+                Try
+                    postid = midReturn(nowClipTxt + "/", "/v/", "/")
+                    Debug.Print("1")
+
+                Catch ex As Exception
+                    validate = False
+
+                End Try
+
             Else '아무것도 아닐경우
                 validate = False
             End If
@@ -346,11 +357,11 @@ Public Class Form1
                     GetVideoIDS(postid, postnum)
                 Else
                     '바로 비디오 불러오기 작업 수행
-                    analyzeLink(nowClipTxt)
+                    analyzeLink(nowClipTxt, nowClipTxt.Contains("tv.naver.com/v/"))
                 End If
 
 
-                If vidOK Then
+                    If vidOK Then
                     FadeOut(Me)
                     setNormalHeight()
                     Height = normalHeight
@@ -434,7 +445,7 @@ Public Class Form1
 
     End Sub
 
-    Sub analyzeLink(url As String)
+    Sub analyzeLink(url As String, isnavertv As Boolean)
 
         ChkTimer.Stop()
 
@@ -452,14 +463,24 @@ Public Class Form1
         Dim key1 As String = Nothing
         Dim key2 As String = Nothing
 
-        '소스코드인 경우
-        If url.Contains("src=""") Then
-            url = midReturn(url, "src=""", """")
-            key1 = midReturn(url + "&", "vid=", "&")
-            key2 = Mid(url, url.IndexOf("outKey=") + 8, url.Length)
-        Else '플레이어 URL인 경우
-            key1 = midReturn(url, "vid=", "&")
-            key2 = midReturn(url + "&", "outKey=", "&")
+        '네이버 TV일 경우
+        If isnavertv Then
+            url = midReturn(url + "/", "/v/", "/")
+            Dim tvsource As String = webget("https://tv.naver.com/embed/" + url)
+            key1 = midReturn(tvsource, "videoId: '", "'")
+            key2 = midReturn(tvsource, "inKey: '", "'")
+
+        Else '아닐 경우
+            '소스코드인 경우
+            If url.Contains("src=""") Then
+                url = midReturn(url, "src=""", """")
+                key1 = midReturn(url + "&", "vid=", "&")
+                key2 = Mid(url, url.IndexOf("outKey=") + 8, url.Length)
+            Else '플레이어 URL인 경우
+                key1 = midReturn(url, "vid=", "&")
+                key2 = midReturn(url + "&", "outKey=", "&")
+            End If
+
         End If
 
         Dim dataJson As String = webget("http://apis.naver.com/rmcnmv/rmcnmv/vod/play/v2.0/" + key1 + "?key=" + key2)
@@ -507,22 +528,34 @@ Public Class Form1
 
             videoIndex = 0
             Dim qualityRate As Short = 0
-            ' 1080p = 3 720p = 2 480p = 1 나머지 0
+            ' 1080p = 5 720p = 4 480p = 3 360p = 2 270p = 1 나머지 0
 
             For Each name As String In videoName
-                If name.Contains("1080p") Then
+                If name.Contains("1080p") Or name.Contains("1080P") Then
+                    If 5 >= qualityRate Then
+                        videoIndex = videoName.IndexOf(name)
+                        qualityRate = 5
+                    End If
+
+                ElseIf name.Contains("720p") Or name.Contains("720P") Then
+                    If 4 >= qualityRate Then
+                        videoIndex = videoName.IndexOf(name)
+                        qualityRate = 4
+                    End If
+
+                ElseIf name.Contains("480p") Or name.Contains("480P") Then
                     If 3 >= qualityRate Then
                         videoIndex = videoName.IndexOf(name)
                         qualityRate = 3
                     End If
 
-                ElseIf name.Contains("720p") Then
+                ElseIf name.Contains("360p") Or name.Contains("360P") Then
                     If 2 >= qualityRate Then
                         videoIndex = videoName.IndexOf(name)
                         qualityRate = 2
                     End If
 
-                ElseIf name.Contains("480p") Then
+                ElseIf name.Contains("270p") Or name.Contains("270P") Then
                     If 1 >= qualityRate Then
                         videoIndex = videoName.IndexOf(name)
                         qualityRate = 1
@@ -723,7 +756,7 @@ Public Class Form1
     End Sub
 
     Private Sub VideoSelectCB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles VideoSelectCB.SelectedIndexChanged
-        analyzeLink(postVidUrl(VideoSelectCB.SelectedIndex))
+        analyzeLink(postVidUrl(VideoSelectCB.SelectedIndex), False)
     End Sub
 
     Private Sub videoBT_MouseEnter(sender As Object, e As EventArgs) Handles videoBT.MouseEnter, CaptionBT.MouseEnter, VidInfoBT.MouseEnter
