@@ -586,6 +586,8 @@ Public Class Form1
             + "Mem: " + (My.Computer.Info.TotalPhysicalMemory).ToString + " (" + Math.Round(My.Computer.Info.TotalPhysicalMemory / 1024 / 1024 / 1024, 2).ToString + "GB)" + vbCr _
             + "Platform: " + My.Computer.Info.OSPlatform
 
+        VerLabel.Text = "v" + My.Application.Info.Version.Major.ToString + "." + My.Application.Info.Version.Minor.ToString
+
         If My.Computer.FileSystem.DirectoryExists("C:\Program Files (x86)") Then
             pcinfo += " (64Bit OS)"
         Else
@@ -882,9 +884,5 @@ Public Class Form1
 
     Private Sub NotifyIcon1_Click(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.Click
         ProgramMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y)
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-        TitleLabelUpdate("TEST DRAW")
     End Sub
 End Class

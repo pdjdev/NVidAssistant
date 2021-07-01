@@ -417,7 +417,7 @@ Partial Class Form1
         Me.Panel10.Location = New System.Drawing.Point(0, 58)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Padding = New System.Windows.Forms.Padding(14, 0, 14, 5)
-        Me.Panel10.Size = New System.Drawing.Size(394, 646)
+        Me.Panel10.Size = New System.Drawing.Size(394, 654)
         Me.Panel10.TabIndex = 21
         '
         'SettingPanel
@@ -432,7 +432,7 @@ Partial Class Form1
         Me.SettingPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.SettingPanel.Location = New System.Drawing.Point(14, 288)
         Me.SettingPanel.Name = "SettingPanel"
-        Me.SettingPanel.Size = New System.Drawing.Size(366, 353)
+        Me.SettingPanel.Size = New System.Drawing.Size(366, 366)
         Me.SettingPanel.TabIndex = 24
         Me.SettingPanel.Visible = False
         '
@@ -669,7 +669,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(394, 704)
+        Me.ClientSize = New System.Drawing.Size(394, 712)
         Me.Controls.Add(Me.Panel10)
         Me.Controls.Add(Me.TopParentPanel)
         Me.DoubleBuffered = True
