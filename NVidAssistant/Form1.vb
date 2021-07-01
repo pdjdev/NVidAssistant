@@ -335,7 +335,6 @@ Public Class Form1
 
                 Try
                     postid = midReturn(nowClipTxt + "/", "/v/", "/")
-                    Debug.Print("1")
 
                 Catch ex As Exception
                     validate = False
@@ -466,9 +465,9 @@ Public Class Form1
         '네이버 TV일 경우
         If isnavertv Then
             url = midReturn(url + "/", "/v/", "/")
-            Dim tvsource As String = webget("https://tv.naver.com/embed/" + url)
-            key1 = midReturn(tvsource, "videoId: '", "'")
-            key2 = midReturn(tvsource, "inKey: '", "'")
+            Dim tvsource As String = webget("https://tv.naver.com/v/" + url)
+            key1 = midReturn(tvsource, """videoId"" : """, """")
+            key2 = midReturn(tvsource, """inKey"" : """, """")
 
         Else '아닐 경우
             '소스코드인 경우
