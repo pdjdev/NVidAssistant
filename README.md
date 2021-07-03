@@ -1,7 +1,7 @@
 # NVidAssistant
 <img src="banner.png" width="50%" height="50%">
 
-### [최신버전 다운로드 (v0.1)](https://github.com/pdjdev/NVidAssistant/releases/download/v0.1/NVidAssistant.exe)
+### [최신버전 다운로드 (v0.2)](https://github.com/pdjdev/NVidAssistant/releases/download/v0.2/NVidAssistant.exe)
 
 ## 소개
 네이버 블로그, 카페, 네이버TV에 업로드된 비디오를 자막과 함께 외부 플레이어로 재생할 수 있도록 도와주는 프로그램입니다
@@ -17,7 +17,7 @@
 * 방법2. 팝업창에서 전원 아이콘 클릭 > 예
 
 ## 특장점
-- 최적의 화질과 언어를 자동으로 설정하여 바로 재생
+- 최적의 화질과 언어를 자동으로 설정하여 바로 재생 (4K까지 지원, 단 1080p로 우선 선택)
 - VLC, 팟플레이어, WMP같은 자기에게 익숙한 플레이어를 이용
 - 오디오 노멀라이징, 각종 영상 필터 등을 취향에 맞게 적용 가능
 - 자막이 포함된 영상의 경우 원하는 폰트로 설정하여 시청할 수 있음
