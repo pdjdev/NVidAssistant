@@ -356,6 +356,7 @@ Public Class Form1
                     GetVideoIDS(postid, postnum)
                 Else
                     '바로 비디오 불러오기 작업 수행
+                    VideoSelectPanel.Visible = False
                     analyzeLink(nowClipTxt, nowClipTxt.Contains("tv.naver.com/v/"))
                 End If
 
