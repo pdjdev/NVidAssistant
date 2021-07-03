@@ -24,8 +24,6 @@ Public Class Form1
     Dim captionIndex As Integer = -1
 
     Public isClosing = False
-
-
     Dim normalHeight As Integer = 0
 
 #Region "창 이동"
@@ -250,8 +248,10 @@ Public Class Form1
 
         If playerAvailable Then
             Process.Start(processName, Args)
+            Debug.Print("pn: " + processName + ", args:" + args)
 
             FadeOut(Me)
+            GC.Collect()
             'WindowState = FormWindowState.Minimized
             HideTimeOut.Start()
             ChkTimer.Start()
@@ -387,11 +387,12 @@ Public Class Form1
                     End Select
 
                     Show()
-                    'WindowState = FormWindowState.Normal
+                    WindowState = FormWindowState.Normal
                     TopMost = True
-
                     Refresh()
                     FadeIn(Me, 1)
+
+
                     Try
                         Clipboard.Clear()
                     Catch ex As Exception
@@ -619,6 +620,7 @@ Public Class Form1
             + "Platform: " + My.Computer.Info.OSPlatform
 
         VerLabel.Text = "v" + My.Application.Info.Version.Major.ToString + "." + My.Application.Info.Version.Minor.ToString
+        AppInfoItem1.Text = "네이버 비디오 도우미 v" + My.Application.Info.Version.Major.ToString + "." + My.Application.Info.Version.Minor.ToString
 
         If My.Computer.FileSystem.DirectoryExists("C:\Program Files (x86)") Then
             pcinfo += " (64Bit OS)"
@@ -682,6 +684,7 @@ Public Class Form1
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         FadeOut(Me)
+        GC.Collect()
 
         If Not isclosing Then
             e.Cancel = True
@@ -916,5 +919,9 @@ Public Class Form1
 
     Private Sub NotifyIcon1_Click(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.Click
         ProgramMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y)
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Process.Start("https://github.com/pdjdev/NVidAssistant")
     End Sub
 End Class
