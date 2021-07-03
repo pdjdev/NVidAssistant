@@ -1,7 +1,7 @@
 # NVidAssistant
 <img src="banner.png" width="50%" height="50%">
 
-### [최신버전 다운로드 (v0.2)](https://github.com/pdjdev/NVidAssistant/releases/download/v0.2/NVidAssistant.exe)
+### [최신버전 다운로드 (v1.0)](https://github.com/pdjdev/NVidAssistant/releases/download/v1.0/NVidAssistant.exe)
 
 ## 소개
 네이버 블로그, 카페, 네이버TV에 업로드된 비디오를 자막과 함께 외부 플레이어로 재생할 수 있도록 도와주는 프로그램입니다
