@@ -32,6 +32,7 @@
 
     Public Function webget(url As String)
         Dim source = New System.Net.WebClient()
+        source.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36")
         source.Encoding = System.Text.Encoding.UTF8
         'MsgBox(url)
 

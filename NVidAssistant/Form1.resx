@@ -3905,18 +3905,6 @@
         mK3WhtMjj/x/QSuwi+lq2PcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="infoRTB.Text" xml:space="preserve">
-    <value>[pcinfo]
-
-NVidAssistant는 네이버 블로그에 게시된 영상을 외부 플레이어를 통해 편리하게 볼 수 있도록 도와주는 유틸리티입니다.
-
-[사용권 동의]
-본 프로그램(NVidExtractor)은 개인, 가정, 기업, 관공서, 학교, 학원 등 언제나 어디에서나 무료로 제약없이 사용 가능한 무료 소프트웨어입니다.
-본 프로그램은 현재 개발중이므로 일부 기능이나 작동 등에 결함이 있을 수 있습니다. 본 프로그램은 네이버와 관계없는 비공식 소프트웨어이기 때문에, 안정적인 작동을 보장해 드릴 수 없으며, 불법적인 용도로 사용할 수 없습니다. 본 프로그램으로 인해 생기는 사고나 불이익은 개발자 측에서 책임 져 드릴 수 없으니 참고 바랍니다.
-이 프로그램을 재배포하실 수는 있으나, 개발자 동의를 거치지 않고 임의로 수정하거나 고친 뒤 배포하지 마시기 바랍니다. 만약 위에 대해 동의하지 않거나 설치를 원하지 않는 경우, 언제든지 사용을 중단하거나 제거하실 수 있습니다.
-
-Copyright (c) 2021 pdjdev (PBJSoftware)</value>
-  </data>
   <data name="ThumbnailBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAADeQAAAfQCAYAAAAZj76/AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -23746,6 +23734,18 @@ Copyright (c) 2021 pdjdev (PBJSoftware)</value>
         B2sezHxtfHb89fjQeO/YL++vjTeP141Xjx/5fz80zi89AAAAAAAAAAAAAAAAwO4ePbuHtDtJu5u0O0q7
         q7Q7S7u7tDtMu8u0O02722QufJ5++v8A+9vVsSiz7MkAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="infoRTB.Text" xml:space="preserve">
+    <value>[pcinfo]
+
+NVidAssistant는 네이버 블로그에 게시된 영상을 외부 플레이어를 통해 편리하게 볼 수 있도록 도와주는 유틸리티입니다.
+
+[사용권 동의]
+본 프로그램(NVidExtractor)은 개인, 가정, 기업, 관공서, 학교, 학원 등 언제나 어디에서나 무료로 제약없이 사용 가능한 무료 소프트웨어입니다.
+본 프로그램은 현재 개발중이므로 일부 기능이나 작동 등에 결함이 있을 수 있습니다. 본 프로그램은 네이버와 관계없는 비공식 소프트웨어이기 때문에, 안정적인 작동을 보장해 드릴 수 없으며, 불법적인 용도로 사용할 수 없습니다. 본 프로그램으로 인해 생기는 사고나 불이익은 개발자 측에서 책임 져 드릴 수 없으니 참고 바랍니다.
+이 프로그램을 재배포하실 수는 있으나, 개발자 동의를 거치지 않고 임의로 수정하거나 고친 뒤 배포하지 마시기 바랍니다. 만약 위에 대해 동의하지 않거나 설치를 원하지 않는 경우, 언제든지 사용을 중단하거나 제거하실 수 있습니다.
+
+Copyright (c) 2021 pdjdev (PBJSoftware)</value>
   </data>
   <metadata name="PlayerLocateDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>994, 17</value>

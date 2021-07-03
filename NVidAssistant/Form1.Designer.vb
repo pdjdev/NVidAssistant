@@ -182,7 +182,7 @@ Partial Class Form1
         Me.ExpandBT.Location = New System.Drawing.Point(3, 3)
         Me.ExpandBT.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.ExpandBT.Name = "ExpandBT"
-        Me.ExpandBT.Size = New System.Drawing.Size(91, 19)
+        Me.ExpandBT.Size = New System.Drawing.Size(90, 19)
         Me.ExpandBT.TabIndex = 1
         Me.ExpandBT.Text = "재생/팝업 설정"
         Me.ExpandBT.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -192,10 +192,10 @@ Partial Class Form1
         Me.ExpandBTIcon.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(129, Byte), Integer))
         Me.ExpandBTIcon.Dock = System.Windows.Forms.DockStyle.Right
         Me.ExpandBTIcon.Image = CType(resources.GetObject("ExpandBTIcon.Image"), System.Drawing.Image)
-        Me.ExpandBTIcon.Location = New System.Drawing.Point(94, 3)
+        Me.ExpandBTIcon.Location = New System.Drawing.Point(93, 3)
         Me.ExpandBTIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ExpandBTIcon.Name = "ExpandBTIcon"
-        Me.ExpandBTIcon.Size = New System.Drawing.Size(18, 19)
+        Me.ExpandBTIcon.Size = New System.Drawing.Size(19, 19)
         Me.ExpandBTIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ExpandBTIcon.TabIndex = 0
         Me.ExpandBTIcon.TabStop = False
