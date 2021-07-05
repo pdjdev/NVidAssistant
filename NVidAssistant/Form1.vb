@@ -165,8 +165,8 @@ Public Class Form1
                 ElseIf My.Computer.FileSystem.FileExists("C:\Program Files (x86)\DAUM\PotPlayer\PotPlayer64.exe") Then
                     processName = "C:\Program Files (x86)\DAUM\PotPlayer\PotPlayer64.exe"
 
-                ElseIf My.Computer.FileSystem.FileExists("C:\Program Files\DAUM\PotPlayer\PotPlayer.exe") Then
-                    processName = "C:\Program Files\DAUM\PotPlayer\PotPlayer.exe"
+                ElseIf My.Computer.FileSystem.FileExists("C:\Program Files (x86)\DAUM\PotPlayer\PotPlayer.exe") Then
+                    processName = "C:\Program Files (x86)\DAUM\PotPlayer\PotPlayer.exe"
 
                 Else
                     playerAvailable = False
